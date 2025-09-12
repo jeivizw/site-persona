@@ -30,6 +30,7 @@
             flex-direction: column; 
         }
 
+        
         .titulo-elegante {
             font-family: 'Amsterdam Four', cursive; 
             font-size: 4rem; 
@@ -79,6 +80,28 @@
             margin: 10px 0;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
+
+        
+        body {
+            animation: fadeInAnimation ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
     </style>
 </head> 
 <body>
@@ -87,7 +110,7 @@
     </div>
 
     <div class="container-texto">
-        <p style="color: rgb(143, 10, 184); font-size: 20px;"><em>By Squad 6 - Minecraft ⛏️</em></p>
+        <p style="color: rgb(137, 130, 139); font-size: 20px;"><em>By Squad 6 - Minecraft ⛏️</em></p>
         <hr>
        <p style="color: white; font-size: 60px"> Gustavo Martins Ribeiro</p>
         <img src="/assest/image 4.png" >
@@ -104,11 +127,30 @@
         <p style="color: white; font-size: 60px"> Seus Gostos</p>
         <p style="color: white; font-size: 40px"> New Balance (clothing brand)</p>
         <p style="color: white; font-size: 40px"> SpaceBoyz </p>
+        <p style="color: white; font-size: 40px"> AMD </p>
 
         <p style= "font-size: 20px">Clique aqui para ver sugestões de produtos baseado em seus gostos -> <a style="color:#c0392b" href="pag2.html">aqui</a>.</p>
         <hr>
-
-
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('a');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+
+                if (href && !href.startsWith('#')) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500);
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>

@@ -79,19 +79,57 @@
             margin: 10px 0;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
+
+       
+        body {
+            animation: fadeInAnimation ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
     </style>
 </head> 
 <body>
     <div class="card-borrado">
-        <h1 class="titulo-elegante">Seus Gostos</h1>
+        <h1 class="titulo-elegante">Talvez você goste</h1>
     </div>
 
     <div class="container-texto">
-
         <p style= "font-size: 20px">Para voltar a pagina principal -> <a style="color:#c0392b" href="index.html">aqui</a>.</p>
-
-
-
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('a');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+
+                if (href && !href.startsWith('#')) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500);
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>
