@@ -28,6 +28,10 @@
             font-family: Arial, sans-serif; 
             color: #ffffff;
             flex-direction: column; 
+            /* A animação foi movida para cá */
+            animation: fadeInAnimation ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
         }
 
         .titulo-elegante {
@@ -79,14 +83,19 @@
             margin: 10px 0;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
-
-       
-        body {
-            animation: fadeInAnimation ease 1s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
+        
+        .imagem-com-espaco {
+            float: left; 
+            margin-right: 20px;
+            margin-bottom: 10px; 
         }
-
+        
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
         @keyframes fadeInAnimation {
             0% {
                 opacity: 0;
@@ -107,9 +116,21 @@
     <div class="card-borrado">
         <h1 class="titulo-elegante">Talvez você goste</h1>
     </div>
+    
+    <div class="clearfix">
+        <br>
+        <br>
+        <img src="/assest/image 9.png" align="left" class="imagem-com-espaco">
+        <img src="/assest/image 10.png" align="center" class="imagem-com-espaco">
+        <img src="/assest/image 11.png" align="right" class="imagem-com-espaco">
+        <br>
+        <img src="/assest/image 12.png" align="left" class="imagem-com-espaco">
+        <img src="/assest/image 13.png" align="center" class="imagem-com-espaco">
+        <img src="/assest/image 14.png" align="right" class="imagem-com-espaco">
+    </div>
 
     <div class="container-texto">
-        <p style= "font-size: 20px">Para voltar a pagina principal -> <a style="color:#c0392b" href="index.html">aqui</a>.</p>
+        <p style="font-size: 20px">Para voltar a pagina principal -> <a style="color:#c0392b" href="index.html">aqui</a>.</p>
     </div>
 
     <script>
