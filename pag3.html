@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyan - Spotify</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: url('assest/fundo spotify.png') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            color: #fff;
+        }
+        .spotify-sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 220px;
+            height: 100vh;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            z-index: 10;
+        }
+        .spotify-logo {
+            margin-top: 40px;
+            width: 60px;
+            height: 60px;
+            filter: drop-shadow(0 0 10px #a259ff);
+        }
+        .main-content {
+            margin-left: 220px;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, rgba(30,30,30,0.8) 0%, rgba(20,20,20,0.95) 40%);
+        }
+        .artist-header {
+            display: flex;
+            align-items: flex-end;
+            gap: 40px;
+            padding: 48px 0 0 60px;
+        }
+        .artist-img {
+            width: 260px;
+            height: 260px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 8px 32px rgba(108,46,182,0.5);
+            border: 3px solid #a259ff;
+        }
+        .artist-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 220px;
+        }
+        .verified {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            color: #a259ff;
+            margin-bottom: 8px;
+        }
+        .artist-name {
+            font-size: 5rem;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            line-height: 1;
+            color: #fff;
+            text-shadow: 0 2px 12px #6c2eb6;
+        }
+        .monthly-listeners {
+            font-size: 1.3rem;
+            color: #e0c3fc;
+            margin-bottom: 18px;
+        }
+        .action-bar {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin: 32px 0 0 60px;
+        }
+        .play-btn-big {
+            background: linear-gradient(135deg, #a259ff 0%, #6c2eb6 100%);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(162,89,255,0.3);
+            transition: background 0.2s;
+            text-decoration: none; /* ADICIONADO AQUI PARA GARANTIR */
+        }
+        .play-btn-big:hover {
+            background: linear-gradient(135deg, #b47cff 0%, #a259ff 100%);
+        }
+        .follow-btn {
+            background: #2d0b4e;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            border: 1px solid #a259ff;
+        }
+        .follow-btn:hover {
+            background: #6c2eb6;
+        }
+        .dots-btn {
+            background: none;
+            border: none;
+            color: #a259ff;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0 10px;
+        }
+        .popular {
+            margin: 48px 0 0 60px;
+            max-width: 900px;
+        }
+        .popular-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 18px;
+            color: #a259ff;
+        }
+        .song-list {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .song-list th, .song-list td {
+            padding: 14px 10px;
+            text-align: left;
+        }
+        .song-list th {
+            color: #c7a3ff;
+            font-weight: normal;
+            font-size: 1.1rem;
+        }
+        .song-list tr {
+            border-bottom: 1px solid #6c2eb6;
+        }
+        .song-list tr:last-child {
+            border-bottom: none;
+        }
+        .song-thumb {
+            width: 44px;
+            height: 44px;
+            border-radius: 6px;
+            object-fit: cover;
+            margin-right: 10px;
+            border: 2px solid #a259ff;
+        }
+        .song-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        .song-explicit {
+            display: inline-block;
+            background: #6c2eb6;
+            color: #e0c3fc;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            padding: 2px 6px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .container-texto {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .container-texto p {
+            color: white;
+            font-size: 20px;
+            margin: 10px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        @media (max-width: 900px) {
+            .main-content {
+                margin-left: 0;
+                padding: 0;
+            }
+            .spotify-sidebar {
+                display: none;
+            }
+            .artist-header, .action-bar, .popular {
+                padding-left: 5vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="spotify-sidebar">
+        <img src="assest/spotifyroxo.png" alt="Spotify Logo" class="spotify-logo">
+    </div>
+    <div class="main-content">
+        <div class="artist-header">
+            <img src="assest/kyan.jpg" alt="Kyan artist" class="artist-img">
+            <div class="artist-info">
+                <div class="verified">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="#a259ff" style="vertical-align:middle;"><circle cx="12" cy="12" r="12" fill="#a259ff"/><path d="M17 8l-6.5 6.5L7 11" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Artista verificado
+                </div>
+                <div class="artist-name">Kyan</div>
+                <div class="monthly-listeners">3.879.611 ouvintes mensais</div>
+            </div>
+        </div>
+        <div class="action-bar">
+            <a href="https://open.spotify.com/intl-pt/artist/05qCf6M7E7AxizHVmrcPqh" class="play-btn-big">▶</a>
+            
+            <button class="follow-btn">Seguir</button>
+            <button class="dots-btn">•••</button>
+        </div>
+        <div class="popular">
+            <div class="popular-title">Populares</div>
+            <table class="song-list">
+                <tr>
+                    <th>#</th>
+                    <th></th>
+                    <th>Música</th>
+                    <th>Plays</th>
+                    <th>Duração</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="assest/usd.jpeg" alt="USD, é USD!" class="song-thumb">
+                    </td>
+                    <td>
+                        <span class="song-title">USD, é USD!</span>
+                        <span class="song-explicit">E</span>
+                    </td>
+                    <td>21.950.233</td>
+                    <td>2:57</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <img src="assest/mandona.jpeg" alt="Mandona" class="song-thumb">
+                    </td>
+                    <td>
+                        <span class="song-title">Mandona (Se eu te dissesse)</span>
+                    </td>
+                    <td>136.145.051</td>
+                    <td>2:07</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>
+                        <img src="assest/pente.jpeg" alt="Pente 270!" class="song-thumb">
+                    </td>
+                    <td>
+                        <span class="song-title">Pente 270!</span>
+                        <span class="song-explicit">E</span>
+                    </td>
+                    <td>13.196.769</td>
+                    <td>3:41</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>
+                        <img src="assest/jeito.jpg" alt="Jeito Bandido" class="song-thumb">
+                    </td>
+                    <td>
+                        <span class="song-title">Jeito Bandido</span>
+                        <span class="song-explicit">E</span>
+                    </td>
+                    <td>44.519.913</td>
+                    <td>2:26</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+     <div class="container-texto">
+        <p style="font-size: 20px">Para voltar a pagina anterior <-- <a style="color:#7704a5" href="pag2.html">aqui</a>.</p>
+        <p style="font-size: 20px">Avançar nos seus gostos --> <a style="color:#7704a5" href="pag4.html">aqui</a>.</p>
+    </div>
+</body>
+</html>

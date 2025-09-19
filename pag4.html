@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Equilíbrio nos Jogos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+            background: url('assest/1214928 1.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 60px;
+            position: relative;
+        }
+        .headline {
+            font-size: 3rem;
+            font-weight: bold;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px #222;
+        }
+        .subtitle {
+            color: #a3a3ff;
+            font-size: 1.3rem;
+            margin-bottom: 32px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+        .btn {
+            padding: 16px 38px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: filter 0.2s;
+        }
+        .btn-explorar {
+            background: #19e6c1;
+            color: #222;
+        }
+        .btn-comunidade {
+            background: #6c2eb6;
+            color: #fff;
+        }
+        .btn:hover {
+            filter: brightness(0.9);
+        }
+        .benefits-box {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            width: 610px;
+            background: rgba(108,46,182,0.35);
+            border-radius: 32px;
+            padding: 38px 38px 28px 38px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 32px 28px;
+            box-sizing: border-box;
+        }
+        .benefit {
+            background: #4d3799;
+            border-radius: 18px;
+            width: 210px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 18px 22px;
+            color: #fff;
+            box-shadow: 0 2px 12px #2d0b4e55;
+        }
+        .benefit-icon {
+            margin-bottom: 8px;
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+        .benefit-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 2px;
+        }
+        .benefit-desc {
+            font-size: 0.95rem;
+            color: #d1cfff;
+        }
+        .articles-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+            margin-top: 120px;
+        }
+        .articles-img-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .articles-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #fff;
+            text-shadow: 0 2px 8px #222;
+        }
+        .articles-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 18px;
+            background: #4d3799;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            border: 4px solid #6c2eb6;
+        }
+        .articles-img svg {
+            width: 120px;
+            height: 120px;
+        }
+        .articles-list {
+            margin-top: 18px;
+        }
+        .articles-list p {
+            font-size: 1.35rem;
+            margin: 0 0 18px 0;
+            color: #fff;
+            text-shadow: 0 2px 8px #222;
+        }
+        .articles-list p a {
+            color: #a3a3ff;
+            text-decoration: underline;
+        }
+        @media (max-width: 1100px) {
+            .benefits-box {
+                position: static;
+                width: 100%;
+                margin-bottom: 32px;
+            }
+            .container {
+                padding: 24px;
+            }
+            .articles-section {
+                flex-direction: column;
+                gap: 18px;
+            }
+            
+        }
+        @media (max-width: 700px) {
+            .headline {
+                font-size: 2rem;
+            }
+            .benefits-box {
+                padding: 18px;
+            }
+            .benefit {
+                width: 100%;
+                min-width: 160px;
+                height: auto;
+            }
+            .articles-img {
+                width: 120px;
+                height: 120px;
+            }
+
+        }
+                        .container-texto {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .container-texto p {
+            color: white;
+            font-size: 70px;
+            margin: 10px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="headline">
+            Jogar é incrível.<br>
+            Jogar com equilíbrio<br>
+            é ainda melhor!
+        </div>
+        <div class="subtitle">Cuide da sua mente</div>
+        <div class="btn-group">
+            <button class="btn btn-explorar"><a style="color:#ffffff" href="https://gamehall.com.br/setembro-amarelo-7-cuidados-para-a-saude-mental-de-streamers-e-gamers/">Explorar Dicas</a></button>
+            <button class="btn btn-comunidade"><a style="color:#ffffff" href="https://gsvchat.org/?gad_source=1&gad_campaignid=20345740250&gbraid=0AAAAAp2Z04zdDqe8XXukFcncPJvfgmTIv&gclid=Cj0KCQjw_rPGBhCbARIsABjq9ccSsWAEWQHXhs_AJ6Z5Ghap06SjTFD2Kkh0dD0iH3_kTBmNqkRAdSkaAqUHEALw_wcB">Entrar na comunidade</a></button>
+        </div>
+        <div class="benefits-box">
+            <div class="benefit">
+                <img src="assest/headphone.png" alt="Reduza o estresse" class="benefit-icon">
+                <div class="benefit-title">Reduza o estresse</div>
+                <div class="benefit-desc">Estratégias para relaxar</div>
+            </div>
+            <div align = "center" class="benefit">
+                <img src="assest/moon.png" alt="Melhore o sono" class="benefit-icon">
+                <div class="benefit-title">Melhore o sono</div>
+                <div class="benefit-desc">Equilibre seu descanso</div>
+            </div>
+            <div class="benefit">
+                <img src="assest/handshake.png" alt="Conexões reais" class="benefit-icon">
+                <div class="benefit-title">Conexões reais</div>
+                <div class="benefit-desc">Comunidades para conversa</div>
+            </div>
+            <div class="benefit">
+                <img src="assest/brain.png" alt="Evite a fadiga" class="benefit-icon">
+                <div class="benefit-title">Evite a fadiga</div>
+                <div class="benefit-desc">Fadiga mental durante jogos</div>
+            </div>
+        </div>
+        <div class="articles-section">
+            <div class="articles-img-box">
+                <div class="articles-title">Dicas e Artigos</div>
+                <div class="articles-img">
+                    <img src="assest/image 16.png" alt="Artigos e Dicas" style="width: 350px; height: 200px;">
+                </div>
+            </div>
+            <div class="articles-list">
+                <p>Como evitar fadiga mental durante longas sessões de jogo</p>
+                <p><a href="#"><a style="color:#770acf" href="https://www.uai.com.br/uainoticias/2025/09/18/os-5-exercicios-mais-eficazes-para-relaxar-e-reduzir-a-ansiedade-em-minutos/">5 Exercícios para reduzir a ansiedade</a></p>
+                <p>Burnout: Como identificar os sinais</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-texto">
+        <p style="font-size: 20px">Para voltar a pagina anterior <-- <a style="color:#c0392b" href="pag3.html">aqui</a>.</p>
+        <p style="font-size: 20px">Voltar ao Inicio --> <a style="color:#c0392b" href="index.html">aqui</a>.</p>
+    </div>
+</body>
+</html>
