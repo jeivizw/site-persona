@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avanti Palmeiras!</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f6; 
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #004d26; 
+        }
+
+        
+        .hero {
+            background-image: url("/assest/INST_SemPatch_SITE_1500.jpg"); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed; 
+            min-height: 20vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif; 
+        }
+
+        .hero h1 {
+            font-family: 'Lora', serif; 
+            font-size: 3.5rem;
+            color: #fff;
+        }
+
+        .hero p {
+            text-align: center; /* Corrigido */
+            color: #fff; /* Adicionado para melhor visibilidade */
+            font-size: 1.2rem;
+            margin: 10px 0 30px;
+        }
+
+        .btn-principal {
+            background-color: #00a859; 
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-principal:hover {
+            background-color: #008f4b; 
+        }
+
+        
+        main {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto; 
+            padding: 0 20px;
+            display: flex;
+            gap: 40px; 
+        }
+
+        .noticias {
+            flex: 2; 
+        }
+
+        .proximos-jogos {
+            flex: 1;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00a859;
+            padding-bottom: 5px;
+        }
+
+        .grid-noticias {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+            background-color: #1c3d52;
+            color: #fff;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-content h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-card {
+            background-color: #6cbe8a;
+            color: #fff;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            align-self: flex-start;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-card:hover {
+            background-color: #5aa777;
+        }
+
+        .proximos-jogos {
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .proximos-jogos::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50px;
+            width: 5px;
+            height: calc(100% - 50px);
+            background-color: #cecece;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        thead {
+            background-color: #4b2c8a;
+            color: #fff;
+        }
+
+        tbody tr {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .grid-noticias {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+         body {
+            animation: fadeInAnimation ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Avanti Palmeiras!</h1>
+        <p>Tudo sobre o verdão em um só lugar, notícias e memórias</p>
+        <a href="https://www.palmeiras.com.br/" class="btn-principal">Ver últimas notícias</a>
+    </header>
+
+    <main>
+        <div class="container">
+            
+            <section class="noticias">
+                <h2>Notícias</h2>
+                <div class="grid-noticias">
+                    <article class="card">
+                        <img src="/assest/Palmeiras-Liverpool-Libertadores-Estevao-scaled-aspect-ratio-512-320-1024x640.jpg" alt="Jogadores do Palmeiras comemorando">
+                        <div class="card-content">
+                            <h3>Palmeiras mira topo</h3>
+                            <p>Verdão tem sequência de jogos mais tranquila na briga pelo título.</p>
+                            <a href="https://portaldopalestra.com.br/noticias-do-palmeiras/?gad_source=1&gad_campaignid=22973704944&gbraid=0AAAABAqrARy0ipBpPQeWkjAWbDS-siPXN#google_vignette" class="btn-card">Saiba Mais</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="/assest/untitled-design-15.jpg" alt="Torcida do Palmeiras no estádio">
+                         <div class="card-content">
+                            <h3>Ingressos esgotando</h3>
+                            <p>Torcida garante presença em peso contra o River pela Libertadores.</p>
+                            <a href="https://portaldopalestra.com.br/noticias-do-palmeiras/?gad_source=1&gad_campaignid=22973704944&gbraid=0AAAABAqrARy0ipBpPQeWkjAWbDS-siPXN#google_vignette" class="btn-card">Saiba Mais</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="/assest/raphael-veiga-do-palmeiras-durante-treino-1746205857712_v2_3x4.jpg" alt="Jogador Raphael Veiga sorrindo">
+                         <div class="card-content">
+                            <h3>Veiga volta confiante</h3>
+                            <p>Meia se recupera de lesão e fica à disposição para a próxima partida.</p>
+                            <a href="https://portaldopalestra.com.br/noticias-do-palmeiras/?gad_source=1&gad_campaignid=22973704944&gbraid=0AAAABAqrARy0ipBpPQeWkjAWbDS-siPXN#google_vignette" class="btn-card">Saiba Mais</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="/assest/07032025_cg_palmeiras_5206_3.jpg"alt="Jogadores do Palmeiras treinando">
+                        <div class="card-content">
+                            <h3>Foco total</h3>
+                            <p>Elenco se reapresenta e inicia preparação para o clássico.</p>
+                            <a href="https://portaldopalestra.com.br/noticias-do-palmeiras/?gad_source=1&gad_campaignid=22973704944&gbraid=0AAAABAqrARy0ipBpPQeWkjAWbDS-siPXN#google_vignette" class="btn-card">Saiba Mais</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <aside class="proximos-jogos">
+                <h2>Próximos jogos</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data e Hora</th>
+                            <th>Adversário</th>
+                            <th>Local</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>25 de Maio, 19h</td>
+                            <td>Corinthians</td>
+                            <td>Allianz Parque</td>
+                        </tr>
+                        <tr>
+                            <td>1 de Junho, 16h</td>
+                            <td>Santos</td>
+                            <td>Vila Belmiro</td>
+                        </tr>
+                        <tr>
+                            <td>8 de Junho, 20h</td>
+                            <td>São Paulo</td>
+                            <td>Morumbi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </aside>
+
+        </div>
+            <div class="container-texto" style="text-align: center; margin-top: 40px;">
+        <p style="font-size: 20px">Para voltar a pagina anterior <-- <a style="color:#0acf35" href="pag4.html">aqui</a>.</p>
+        <p style="font-size: 20px">Voltar ao Inicio --> <a style="color:#0acf35" href="index.html">aqui</a>.</p>
+    </div>
+    </main>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('a');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+
+                if (href && !href.startsWith('#')) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500);
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
