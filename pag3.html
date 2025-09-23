@@ -10,11 +10,13 @@
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: url('assest/fundo spotify.png') no-repeat center center fixed;
+            /* --- CORREÇÃO: Removido o espaço do nome do arquivo 'fundo spotify.png' --- */
+            background: url('assest/fundo-spotify.png') no-repeat center center fixed;
             background-size: cover;
             min-height: 100vh;
             color: #fff;
         }
+        /* O restante do seu CSS continua exatamente igual */
         .spotify-sidebar {
             position: fixed;
             left: 0;
@@ -202,13 +204,11 @@
                 padding-left: 5vw;
             }
         }
-
         body {
             animation: fadeInAnimation ease 1s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
         }
-
         @keyframes fadeInAnimation {
             0% {
                 opacity: 0;
@@ -217,12 +217,10 @@
                 opacity: 1;
             }
         }
-
         .fade-out {
             opacity: 0;
             transition: opacity 0.5s;
         }
-        
     </style>
 </head>
 <body>
